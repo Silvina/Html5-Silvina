@@ -1,0 +1,47 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!--Punto 3    -->
+         <script type="text/javascript">
+                window.alert("Page has been loaded");
+        </script>
+        
+          <SCRIPT LANGUAGE="JavaScript"> type="text/javascript"
+            $ (Document).Ready(function () {
+                $ ("# Boton1").Click(function (evento) {
+                      evento.preventDefault();
+                    $.Post( "/api/dispatcher.php",{service: "welcome.hello", params:{"name":$('# Alias').val()}}, 
+                            function(data,e){ 
+                                 if ( e == 'error'){mostrar_mens('contenido_a_mostrar'); }
+                              });
+                   });
+        </Script>
+    
+    <body  onload="document.getElementById('Alias').focus();">
+              <!--Punto 1    -->
+        <script src='https://www.google.com/jsapi' type='text/javascript'></script>
+        <script type='text/javascript'>
+             //<![CDATA[
+            google.load("jquery", "1.7.1");
+            //]]>
+        </script>   
+    
+        <!--Punto 2    -->
+      
+          <input type="text" id="Alias">
+              
+           <input type="button" id="Boton1" value=" Enviar" />
+              
+        <br>
+        <br>
+      
+       
+
+    </body>
+</html>
